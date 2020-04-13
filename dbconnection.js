@@ -7,6 +7,10 @@ class DBConnection {
   }
 
   getTasks() {
+    if (!fs.existsSync(tasksFilePath)) {
+      fs.writeFileSync(tasksFilePath, '[]');
+    }
+
     fs.readFile(tasksFilePath, (err, tasks) => {
       if (err) {
         throw err;

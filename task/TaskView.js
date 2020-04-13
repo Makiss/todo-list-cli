@@ -70,7 +70,7 @@ complete                 complete todo task\n`
       readlineInterface.write(
         parsedTasks.length > 0
           ? this._renderTaskList(parsedTasks)
-          : 'There no tasks to do.'
+          : 'There are no tasks to do.'
       );
 
       process.exit();
