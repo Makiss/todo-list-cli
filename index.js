@@ -15,6 +15,11 @@ const taskView = new TaskView(emitter);
 const taskModel = new TaskModel(db, emitter);
 const taskManager = new TaskViewModel(taskView, taskModel);
 
+if (!commandName) {
+  console.log("Please enter a valid command. Use 'help' to learn more.");
+  process.exit();
+}
+
 switch (commandsEnum[commandName.toUpperCase()]) {
   case 'NEW':
     taskManager.newTask();
